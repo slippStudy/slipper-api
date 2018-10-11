@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql/mysql-server:5.6
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: slipp123!!
+      MYSQL_USER: slipp
+      MYSQL_PASSWORD: slipp
+      MYSQL_DATABASE: slipp
+    networks:
+      - esnet
+
+  redis:
+    image: redis:4.0
+    ports:
+      - "6379:6379"
+    networks:
+      - esnet
+
+networks:
+  esnet:
