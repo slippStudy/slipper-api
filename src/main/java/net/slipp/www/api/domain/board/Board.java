@@ -1,23 +1,30 @@
 package net.slipp.www.api.domain.board;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
+import net.slipp.www.api.domain.support.AuditingEntity;
 
 @Data
 @Entity
 @Table(name = "slipp_board")
-public class Board {
+public class Board extends AuditingEntity {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name = "title")
+
+	@ManyToOne
+	@JoinColumn(name ="category")
+	private BoardCategory category;
+
 	private String title;
+
+	private String content;
+
+	@Column(name ="image_url")
+	private String imageUrl;
+
+    @Column(name ="is_deleted", columnDefinition="bit(1) default 1")
+	private Boolean isDeleted = false;
 }
