@@ -1,0 +1,6 @@
+.idea/
+.gradle/
+out/
+
+application-local.properties
+keystore.p12
