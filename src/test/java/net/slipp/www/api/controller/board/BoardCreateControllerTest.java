@@ -17,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -52,6 +53,7 @@ public class BoardCreateControllerTest {
     }
 
     @Test
+    @Transactional
     public void 게시물_등록() throws Exception {
 
         BoardDto.Create create = new BoardDto.Create(1L, "테스트", "테스트입니다.", "http://");
@@ -69,6 +71,7 @@ public class BoardCreateControllerTest {
     }
 
     @Test
+    @Transactional
     public void 게시물_수정() throws Exception {
         BoardDto.Modify modify = new BoardDto.Modify(1L, "테스트 수정", "수정 테스트입니다.", "https://");
 
@@ -85,6 +88,7 @@ public class BoardCreateControllerTest {
     }
 
     @Test
+    @Transactional
     public void 게시물_삭제() throws Exception {
 
         this.mvc.perform(delete("/v1/boards/{id}", createdBoardId)
