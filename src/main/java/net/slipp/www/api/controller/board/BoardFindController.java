@@ -2,22 +2,17 @@ package net.slipp.www.api.controller.board;
 
 import net.slipp.www.api.dto.board.BoardDto;
 import net.slipp.www.api.service.board.BoardFindService;
-import net.slipp.www.api.service.board.BoardNotFoundException;
+import net.slipp.www.api.exception.BoardNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.ApiOperation;
 import net.slipp.www.api.domain.board.Board;
 import net.slipp.www.api.support.ResponseWrapper;
-
-import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/v1/boards")
@@ -36,12 +31,7 @@ public class BoardFindController {
 	@ApiOperation(value = "게시글 조회", responseReference = "ResponseWrapper<BoardDto.Response>")
 	@GetMapping("/{id}")
 	public ResponseWrapper<BoardDto.Response> find(@PathVariable Long id) {
-		Board board = null;
-		try {
-			board = boardFindService.find(id);
-		} catch (BoardNotFoundException e) {
-			return ResponseWrapper.notFound(null);
-		}
+		Board board = boardFindService.find(id);
 		return ResponseWrapper.success(modelMapper.map(board, BoardDto.Response.class));
 	}
 

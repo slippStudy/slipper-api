@@ -3,6 +3,8 @@ package net.slipp.www.api.service.board;
 import net.slipp.www.api.domain.board.Board;
 import net.slipp.www.api.domain.board.BoardCategory;
 import net.slipp.www.api.dto.board.BoardDto;
+import net.slipp.www.api.exception.BoardCategoryNotFoundException;
+import net.slipp.www.api.exception.BoardNotFoundException;
 import net.slipp.www.api.repository.BoardCategoryRepository;
 import net.slipp.www.api.repository.BoardRepository;
 import org.modelmapper.ModelMapper;

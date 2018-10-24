@@ -1,9 +1,7 @@
 package net.slipp.www.api.controller.board;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import net.slipp.www.api.dto.board.BoardDto;
-import net.slipp.www.api.service.board.BoardCategoryNotFoundException;
+import net.slipp.www.api.exception.BoardCategoryNotFoundException;
 import net.slipp.www.api.service.board.BoardCreateService;
 import net.slipp.www.api.service.board.BoardFindService;
 import org.junit.Before;
@@ -20,7 +18,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
