@@ -30,12 +30,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class BoardFindControllerTest {
 
     @Autowired
-    private BoardCreateService boardCreateService;
-    @Autowired
     private MockMvc mvc;
 
     @Autowired
     private BoardFindService boardFindService;
+
+    @Autowired
+    private BoardCreateService boardCreateService;
 
     @Autowired
     private ModelMapper modelMapper;

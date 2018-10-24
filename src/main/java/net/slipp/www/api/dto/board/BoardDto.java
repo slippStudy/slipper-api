@@ -41,7 +41,9 @@ public class BoardDto {
         private String imageUrl;
     }
 
-    @Getter
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class Modify {
         private Long categoryNo;
 
@@ -52,6 +54,3 @@ public class BoardDto {
         private String imageUrl;
     }
 }
-
-
-
