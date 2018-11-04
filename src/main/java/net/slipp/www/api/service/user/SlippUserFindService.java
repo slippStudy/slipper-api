@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.slipp.www.api.domain.user.SlippUser;
-import net.slipp.www.api.repository.SlippUserRepository;
+import net.slipp.www.api.repository.user.SlippUserRepository;
 
 @Service
 public class SlippUserFindService {

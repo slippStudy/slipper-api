@@ -23,3 +23,16 @@ create table slipp_board (
 alter table slipp_board add constraint FK__slipp_board__slipp_board_category
 foreign key (category) references slipp_board_category (no);
 iedDate;
+
+
+create table slipp_board_comment (
+  id bigint not null auto_increment,
+  board_id bigint not null,
+  content varchar(1000) not null,
+  is_deleted tinyint(1) not null default 0,
+  created_by varchar(32),
+  modified_by varchar(32),
+  created_date datetime,
+  modified_date datetime,
+  primary key (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,4 +1,4 @@
-package net.slipp.www.api.repository;
+package net.slipp.www.api.repository.board;
 
 import net.slipp.www.api.domain.board.Board;
 import org.springframework.data.domain.Page;

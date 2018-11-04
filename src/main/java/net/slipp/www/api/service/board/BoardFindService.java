@@ -2,7 +2,8 @@ package net.slipp.www.api.service.board;
 
 import net.slipp.www.api.domain.board.Board;
 import net.slipp.www.api.exception.BoardNotFoundException;
-import net.slipp.www.api.repository.BoardRepository;
+import net.slipp.www.api.repository.board.BoardRepository;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
